@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block contenedor %}
+<section class="content-header">
+      <h1>
+        Work Orders
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Coordinator</th>
+                  <th>Wo Status</th>
+                  <th>Wo</th>
+                  <th>Estate</th>
+                  <th>Adres</th>
+                  <th>Client</th>
+                  <th>Client Contract</th>
+                  <th>Vendor</th>
+                  <th>Vendor Sub-out</th>
+                  <th>Sub-out%</th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for p in orders %}
+                    <tr>
+                      <td>{{ p.start_date }}</td>
+                      <td>{{ p.end_date }}
+                      </td>
+                      <td>{{ p.coordinator }}</td>
+                      <td>{{ p.status }}</td>
+                      <td>{{ p.number }}</td>
+                      <td>{{ p.state }}</td>
+                      <td>{{ p.address }}</td>
+                      <td>{{ p.client }}</td>
+                      <td>{{ p.client_contract }}</td>
+                      <td>{{ p.vendor }}</td>
+                      <td>{{ p.vendor_sub_out }}</td>
+                      <td>{{ p.sub_out }}</td>
+                      <td>
+                          <a href="{% url 'detail-order' p.id %}"><i class="fa fa-fw fa-eye"></i></a>
+                          <a href="{% url 'edit-order' p.id %}"><i class="fa fa-fw fa-edit"></i></a>
+                      </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Coordinator</th>
+                  <th>Wo Status</th>
+                  <th>Wo</th>
+                  <th>Estate</th>
+                  <th>Adres</th>
+                  <th>Client</th>
+                  <th>Client Contract</th>
+                  <th>Vendor</th>
+                  <th>Vendor Sub-out</th>
+                  <th>Sub-out%</th>
+                  <th></th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+{% endblock contenedor %}
+{% block extrajs %}
+    <script>
+    $("div#example").dropzone({ url: "{% url "dropzone" %}" });
+    $(function () {
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+        $('#example1').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+
+    });
+    </script>
+{% endblock %}

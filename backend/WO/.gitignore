@@ -1,0 +1,10 @@
+*.pyo
+*.pyc
+secret.json
+media
+media/*
+static/admin/
+.idea
+.idea/*
+WOP/wsgi.py
+

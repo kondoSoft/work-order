@@ -1,0 +1,29 @@
+{% for field in form %}
+    {% if not field.is_hidden %}
+        <div class="box-body">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">
+                    {{ field.label }}
+                    {% if field.field.required %}
+                        <b style="color: red;">*</b>
+                    {% endif %}
+                </label>                
+                <div class="col-sm-10">
+                    {{ field }}
+                </div>
+                <div class="has-error">
+                    {% for error in field.errors %}
+                        <span class="help-block help_b_{{ field.html_name }}">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="help_text">
+                    <span class="muted">
+                        {{ field.help_text }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {{ field }}
+    {% endif %}
+{% endfor %}

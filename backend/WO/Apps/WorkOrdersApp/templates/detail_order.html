@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% block contenedor %}
+<div class="row">
+    <!--/.col (right) -->
+    <div class="col-md-5">
+      <!-- Widget: user widget style 1 -->
+      <div class="box box-widget widget-user">
+
+        <div class="box-footer no-padding">
+          <ul class="nav nav-stacked">
+            <li><a href="#">Wo #:<span class="pull-right">{{ order.number }}</span></a></li>
+            <li><a href="#">Status:<span class="pull-right">{{ order.status }}</span></a></li>
+            <li><a href="#">Client:<span class="pull-right">{{ order.client }}</span></a></li>
+            <li><a href="#">Vendor:<span class="pull-right">{{ order.vendor }}</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.widget-user -->
+    </div>
+    <div class="col-md-6">
+      <!-- USERS LIST -->
+      <div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Property Photos(This section is under construction)</h3>
+
+          <div class="box-tools pull-right">
+            <span class="label label-success">0 imagenes</span>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body no-padding">
+          <ul class="users-list clearfix">
+{#            {% for img in imagenes_espacio %}#}
+{#            <li>#}
+{#              <img src="{{ MEDIA_URL }}{{ img.imagen }}" alt="User Image">#}
+{#              <a class="users-list-name" href="#" data-toggle="modal" data-target="#myModalEliminarImagen" onclick="setImgEliminar('{{ MEDIA_URL }}{{ img.imagen }}','{{ img.id }}')">Eliminar</a>#}
+{#              <span class="users-list-date">{{ img.fecha_registro }}</span>#}
+{#            </li>#}
+{#            {% empty %}#}
+                <li>
+                    No photos
+                </li>
+{#            {% endfor %}#}
+          </ul>
+          <!-- /.users-list -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer text-center">
+          <a href="#" class="uppercase" data-toggle="modal" data-target="#myModalAgregarFoto"   title="Agregar una nueva imagen.."><i class="fa fa-fw fa-plus"></i></a>
+        </div>
+        <!-- /.box-footer -->
+      </div>
+      <!--/.box -->
+    </div>
+    <!-- /.col -->
+
+  </div>
+
+  <!-- /.row -->
+<div class="modal fade" id="myModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel" style="text-align: center">Motivo por el cual se inactivara el espacio</h4>
+      </div>
+      <div class="modal-body">
+        <form id="forMotivo">
+          <div class="form-group">
+            <label for="message-text" class="control-label">Motivo:</label>
+              <textarea class="form-control required" id="motivo"></textarea>
+              <input type="hidden" id="espacio_id" value="{{ espacio.id }}">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="inactivarB">Inactivar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="myModalAgregarFoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel" style="text-align: center">Select photo</h4>
+      </div>
+      <div class="modal-body">
+        <form id="forImagenSave" enctype="multipart/form-data" method="post">
+          <div class="form-group">
+            <label for="message-text" class="control-label">Imagen:</label>
+            <input type="file" name="imagen" class="form-control required">
+            <input type="hidden" name="espacio" value="{{ espacio.id }}">
+              <input type="hidden" name="usuario" value="{{ request.user.id }}">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="imagenSave">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="myModalEliminarImagen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel" style="text-align: center">¡Alerta !</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Esta seguro de eliminar la siguiente imagen:</label>
+
+            <div id="imgEliminar"></div>
+              <input type="hidden" id="imagen_id" value="">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="imagenEliminar">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock contenedor %}
+{% block extrajs %}
+    <script>
+    $("div#example").dropzone({ url: "{% url "dropzone" %}" });
+    $(function () {
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+        $('#example1').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+
+    });
+    </script>
+{% endblock %}

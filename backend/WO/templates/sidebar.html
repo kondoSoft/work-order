@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+        <div class="pull-left image">
+            <img src="{% static 'administration/dist/img/icon-user.png' %}" class="img-circle"
+                 alt="User Image">
+        </div>
+        <div class="pull-left info">
+            <p>{{ request.user.username }} - {{ request.user.email|truncatechars:10 }}</p>
+            {% if request.user.is_superuser == True %}
+                <a href="#"><i class="fa fa-circle text-success"></i> Administrator</a>
+            {% endif %}
+        </div>
+    </div>
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+        <li class="{{ inicio }} treeview">
+          <a href="">
+            <i class="fa fa-dashboard"></i> <span>Home</span>
+          </a>
+        </li>
+        <li class="{{ work_orders }} treeview">
+            <a href="#">
+                <i class="fa  fa-users"></i> <span>Orders</span> <i
+                    class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                    <li class="{{ list_orders }}"><a href="{% url 'work-orders-list' %}"><i class="fa fa-circle-o"></i> Work Orders</a></li>
+                    <li class="{{ new_orders }}"><a href="{% url 'new-order' %}"><i class="fa fa-circle-o"></i> New Order</a></li>
+                </ul>
+        </li>
+    </ul>
+</section>
+<!-- /.sidebar -->
