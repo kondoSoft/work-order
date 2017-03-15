@@ -13,5 +13,15 @@ $(document).ready(function (){
            targets: [ 4 ],
            orderData: [ 4, 0 ]
        } ]
-   } );
+   } )
+   $('input[name="daterange"]').daterangepicker();
+   $(".filters").select2({
+     id: 'prueba'
+   });
+   $(".tooltip").tooltip();
+   $(".filter-toggle").on("click", function(){
+     console.log("hola");
+     $(".filters-containers").fadeToggle(400)
+   })
+
 })
