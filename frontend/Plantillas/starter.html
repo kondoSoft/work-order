@@ -131,7 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <section class="row contain-top">
-      <div class="col-lg-6">
+      <div class="col-lg-12">
         <div class="span-group">
            <!-- <ul class="list-group">
             <li class="list-group-item">Total Listing Entries: (#) </li>
@@ -633,67 +633,105 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <div role="tabpanel" class="tab-pane info" id="profile">
           <section class="row">
-            <div class="col-md-3 col-lg-5">
+            <div class="col-md-3 col-lg-6">
               <div class="row info-col1">
-                <article class="wo col-lg-6">
-                  <p>Work Order: (WO #)</p>
-                  <ul>
-                    <li>mas info</li>
-                    <li>mas info</li>
-                  </ul>
-                </article>
-                <article class="client col-lg-6">
-                  <p>Client: {Client Name}</p>
-                  <ul>
-                    <li>mas info</li>
-                    <li>mas info</li>
-                  </ul>
-                </article>
-                <article class="status col-lg-6">
-                  <p>Status</p>
-                  <select class="filters" name="Complete">
-                    <option>Complete</option>
-                    <option>option 2</option>
-                  </select>
-                  <button type="button" name="button">Send Reminder Lvl 1</button>
-                  <button type="button" name="button">Send Reminder Lvl 2</button>
-                </article>
-                <article class="other col-lg-6">
-                  <p>Other Remarks</p>
-                  <ul>
-                    <li>mas info</li>
-                  </ul>
-                </article>
-                <article class="vendor col-lg-12">
-                  <p>Vendor: {Vendor Name}</p>
-                  <ul>
-                    <li>mas info</li>
-                    <li>mas info</li>
-                  </ul>
-                </article>
+                <div class="col-lg-6">
+                  <article class="wo">
+                    <p class="title-p">Work Order: (WO #)</p>
+                    <ul>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                    </ul>
+                  </article>
+
+                  <article class="status">
+                    <p class="title-p">Status</p>
+                    <select class="filters" name="Complete">
+                      <option>Complete</option>
+                      <option>option 2</option>
+                    </select>
+                    <div class="status-btn">
+                      <button type="button" name="button">Send Reminder Lvl 1</button>
+                      <button type="button" name="button">Send Reminder Lvl 2</button>
+                    </div>
+                  </article>
+                  <article class="vendor">
+                    <p class="title-p">Vendor: {Vendor Name}</p>
+                    <ul>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                    </ul>
+                  </article>
+                </div>
+                <div class="col-lg-6">
+                  <article class="client">
+                    <p class="title-p">Client: {Client Name}</p>
+                    <ul>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                    </ul>
+                  </article>
+                  <article class="other">
+                    <p class="title-p">Other Remarks</p>
+                    <ul>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                      <li>mas info</li>
+                    </ul>
+                  </article>
+                </div>
               </div>
             </div>
 
-            <div class="col-md-7 col-lg-7">
+            <div class="col-md-7 col-lg-6">
               <div class="">
-                <p>Property Photos</p>
+                <p class="title-p">Property Photos</p>
+                <div class="property-gallery-btn">
                   <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Load More"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
                   <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Download All"><i class="fa fa-download" aria-hidden="true"></i></button>
                   <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Download Selected"><i class="fa fa-download" aria-hidden="true"></i></button>
-                <div class="gallery">
-                  <img src="http://placehold.it/100x100">
-                  <img src="http://placehold.it/100x100">
-                  <img src="http://placehold.it/100x100">
-                  <img src="http://placehold.it/100x100">
-                  <img src="http://placehold.it/100x100">
                 </div>
+                  <div class="property-gallery">
+                    <img src="http://placehold.it/100x100">
+                    <img src="http://placehold.it/100x100">
+                    <img src="http://placehold.it/100x100">
+                    <img src="http://placehold.it/100x100">
+                    <img src="http://placehold.it/100x100">
+                    <img src="http://placehold.it/100x100">
+                    <img src="http://placehold.it/100x100">
+                    <img src="http://placehold.it/100x100">
+                    <img src="http://placehold.it/100x100">
+                    <img src="http://placehold.it/100x100">
+                  </div>
               </div>
               <div>
-                <p>Property Documents</p>
+                <p class="title-p">Property Documents</p>
+                <div class="property-gallery-btn">
                   <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Load More"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
                   <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Download All"><i class="fa fa-download" aria-hidden="true"></i></button>
                   <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Download Selected"><i class="fa fa-download" aria-hidden="true"></i></button>
-                <div>
+                </div>
+                <div class="property-documents">
+                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
+                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
+                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
+                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
+                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
+                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
+                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
+                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
                   <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
                   <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
                 </div>
@@ -706,7 +744,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row">
             <form class="" action="index.html" method="post">
               <div class="col-md-4">
-                <p>Edit Work Order: {WO #}</p>
+                <p class="title-p">Edit Work Order: {WO #}</p>
                 <div class="input-group">
                   <span class="input-group-addon" id="sizing-addon1">WO</span>
                   <input type="text" name="name" value="Data1">
@@ -741,7 +779,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="col-md-4">
 
                 <div class="">
-                  <p>Client: {Client Name}</p>
+                  <p class="title-p">Client: {Client Name}</p>
                   <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon1">WO</span>
                     <input type="text" name="name" value="Name">
@@ -756,7 +794,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                 </div>
                 <div class="">
-                  <p>Other Remarks</p>
+                  <p class="title-p">Other Remarks</p>
                   <textarea name="name" rows="8" cols="40">More data</textarea>
                 </div>
                 <div class="">
@@ -767,7 +805,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="col-md-4">
                 <div class="">
-                  <p>Vendor: {Vendor Name}</p>
+                  <p class="title-p">Vendor: {Vendor Name}</p>
                   <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon1">WO</span>
                     <input type="text" name="name" value="Name">
@@ -782,7 +820,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                 </div>
                 <div class="">
-                  <p>File / Upload +</p>
+                  <p class="title-p">File / Upload +</p>
                   <i class="glyphicons glyphicons-plus" aria-hidden="true"></i>
                   <div class="">
                     <input type="file" name="name" value="">
