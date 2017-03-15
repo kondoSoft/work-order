@@ -1,6 +1,11 @@
-.select2-container {
+ul {
+  padding: 0px 0px 0px 10px; }
+  ul li {
+    list-style: none; }
+
+.filters-containers .select2-container {
   margin: 0px 2px;
-  width: 100px !important; }
+  width: 90px !important; }
 
 .filters-containers {
   display: none; }
@@ -15,24 +20,43 @@
   margin: 10px; }
 
 .span-title {
-  margin-right: 70px; }
-
-.wo {
-  background-color: orange; }
+  margin-right: 90px; }
 
 .info-col1 {
   margin-left: 10px; }
 
+.title-p {
+  font-size: 19px;
+  margin: 10px; }
+
 .status {
-  background-color: red; }
+  padding: 10px; }
+  .status p {
+    display: inline; }
+  .status .status-btn button {
+    margin: 10px 15px 0px 0px; }
 
-.vendor {
-  background-color: yellow; }
+.property-gallery-btn {
+  text-align: right; }
 
-.client {
-  background-color: green; }
+.property-gallery {
+  width: 550px;
+  height: 260px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  overflow: auto; }
+  .property-gallery img {
+    margin: 10px; }
 
-.other {
-  background-color: aqua; }
+.property-documents {
+  width: 550px;
+  height: 220px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  overflow: auto; }
+
+.info article {
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray; }
 
 /*# sourceMappingURL=index.css.map */
