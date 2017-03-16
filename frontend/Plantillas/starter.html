@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/datatables/jquery.dataTables.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="../plugins/select2/select2.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="css/index.css">
-
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -38,7 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<div class="wrapper" style="height: none;">
 
   <!-- Main Header -->
   <header class="main-header">
@@ -743,210 +743,180 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div role="tabpanel" class="tab-pane edit-orders" id="messages">
           <div class="row">
             <form class="" action="index.html" method="post">
-              <div class="col-md-4">
+              <div class="col-md-4 edit-form">
                 <p class="title-p">Edit Work Order: {WO #}</p>
-                <div class="input-group">
-                  <span class="input-group-addon" id="sizing-addon1">WO</span>
-                  <input type="text" name="name" value="Data1">
+
+                  <input class="inputs"type="text" name="name" placeholder="Data">
+
+                  <input class="inputs"type="text" name="name" placeholder="Data">
+
+
+                  <input class="inputs"type="text" name="name" placeholder="Data">
+
+
+                  <input class="inputs"type="text" name="name" placeholder="Data">
+
+
+                  <input class="inputs"type="text" name="name" placeholder="Data">
+
+                  <div class="select">
+                    <select class="filters" name="Inspection">
+                      <option>Inspection</option>
+                      <option>option2</option>
+                    </select>
+                  </div>
+                  <div class="drag-drop">
+                    <p>Drag and Drop Area</p>
+                  </div>
                 </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="sizing-addon1">WO</span>
-                  <input type="text" name="name" value="Data2">
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="sizing-addon1">WO</span>
-                  <input type="text" name="name" value="Data3">
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="sizing-addon1">WO</span>
-                  <input type="text" name="name" value=Data4>
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="sizing-addon1">WO</span>
-                  <input type="text" name="name" value="Data5">
-                </div>
-                <div class="">
-                  <select class="filters" name="Inspection">
-                    <option>Inspection</option>
-                    <option>option2</option>
-                  </select>
-                </div>
-                <div class="drag-drop" style="border: 1px solid black">
-                  <p>Drag and Drop Area</p>
-                </div>
-              </div>
 
               <div class="col-md-4">
 
-                <div class="">
+                <div class="edit-form">
                   <p class="title-p">Client: {Client Name}</p>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="Name">
-                  </div>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="Last Name">
-                  </div>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="Age">
-                  </div>
+
+                    <input class="inputs" type="text" name="name" placeholder="Data">
+
+
+                    <input class="inputs" type="text" name="name" placeholder="Data">
+
+
+                    <input class="inputs" type="text" name="name" placeholder="Data">
+
                 </div>
-                <div class="">
+                <div class="edit-form">
                   <p class="title-p">Other Remarks</p>
-                  <textarea name="name" rows="8" cols="40">More data</textarea>
+                  <textarea class="inputs" name="name" rows="8" cols="40">More data</textarea>
                 </div>
-                <div class="">
-                  <button type="button" name="button">Update WO info</button>
-                  <button type="button" name="button">Save and Email Vendor</button>
+                <div class="btn-space">
+                  <button class="btn-update" type="button" name="button">Update WO info</button>
+                  <button class="btn-save"type="button" name="button">Save and Email Vendor</button>
                 </div>
 
               </div>
               <div class="col-md-4">
-                <div class="">
+                <div class="edit-form">
                   <p class="title-p">Vendor: {Vendor Name}</p>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="Name">
+                    <input class="inputs" type="text" name="name" placeholder="Data">
+                    <input class="inputs" type="text" name="name" placeholder="Data">
+                    <input class="inputs" type="text" name="name" placeholder="Data">
+
                   </div>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="Last Name">
-                  </div>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="Age">
-                  </div>
-                </div>
-                <div class="">
-                  <p class="title-p">File / Upload +</p>
-                  <i class="glyphicons glyphicons-plus" aria-hidden="true"></i>
-                  <div class="">
-                    <input type="file" name="name" value="">
-                  </div>
-                  <div class="">
-                    CC:
-                    <input type="text" name="name" value="Vendor@gmail.com">
-                  </div>
-                  <div class="">
-                    <p>Message to Vendor</p>
-                    <textarea name="name" rows="4" cols="20">Message</textarea>
-                  </div>
-                  <div class="">
-                    <p>Email Comments (Internal)</p>
-                    <textarea name="name" rows="4" cols="20">Comments</textarea>
+                  <div>
+                    <p class="title-p">File / Upload +</p>
+                    <i class="glyphicons glyphicons-plus" aria-hidden="true"></i>
+                    <div class="input-file">
+                      <input type="file" name="name" placeholder="Data">
+                    </div>
+                    <div class="">
+                      CC:
+                      <input class="inputs" type="text" name="name" placeholder="Data">
+                    </div>
+                    <div class="">
+                      <p>Message to Vendor</p>
+                      <textarea class="inputs" name="name" rows="6" cols="40">Message</textarea>
+                    </div>
+                    <div class="">
+                      <p>Email Comments (Internal)</p>
+                      <textarea class="inputs" name="name" rows="6" cols="40">Comments</textarea>
+                    </div>
                   </div>
                 </div>
+              </form>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane new-orders" id="settings">
+            <div class="row">
+              <form class="" action="index.html" method="post">
+                <div class="col-md-4 edit-form">
+                  <p class="title-p"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Work Order: {WO #}</p>
+
+                    <input class="inputs"type="text" name="name" placeholder="Data">
+
+                    <input class="inputs"type="text" name="name" placeholder="Data">
+
+
+                    <input class="inputs"type="text" name="name" placeholder="Data">
+
+
+                    <input class="inputs"type="text" name="name" placeholder="Data">
+
+
+                    <input class="inputs"type="text" name="name" placeholder="Data">
+
+                    <div class="select">
+                      <select class="filters" name="Inspection">
+                        <option>Inspection</option>
+                        <option>option2</option>
+                      </select>
+                    </div>
+                    <div class="drag-drop">
+                      <p>Drag and Drop Area</p>
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </div>
+                  </div>
+
+                <div class="col-md-4">
+
+                  <div class="edit-form">
+                    <p class="title-p"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Client: {Client Name}</p>
+
+                      <input class="inputs" type="text" name="name" placeholder="Data">
+
+
+                      <input class="inputs" type="text" name="name" placeholder="Data">
+
+
+                      <input class="inputs" type="text" name="name" placeholder="Data">
+
+                  </div>
+                  <div class="edit-form">
+                    <p class="title-p"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Other Remarks</p>
+                    <textarea class="inputs" name="name" rows="8" cols="40">More data</textarea>
+                  </div>
+                  <div class="btn-space">
+                    <button class="btn-update" type="button" name="button">Update WO info</button>
+                    <button class="btn-save"type="button" name="button">Save and Email Vendor</button>
+                  </div>
+
+                </div>
+                <div class="col-md-4">
+                  <div class="edit-form">
+                    <p class="title-p"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Vendor: {Vendor Name}</p>
+                      <input class="inputs" type="text" name="name" placeholder="Data">
+                      <input class="inputs" type="text" name="name" placeholder="Data">
+                      <input class="inputs" type="text" name="name" placeholder="Data">
+
+                    </div>
+                    <div>
+                      <p class="title-p"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> File / Upload +</p>
+                      <i class="glyphicons glyphicons-plus" aria-hidden="true"></i>
+                      <div class="input-file">
+                        <input type="file" name="name" placeholder="Data">
+                      </div>
+                      <div class="">
+                        CC:
+                        <input class="inputs" type="text" name="name" placeholder="Data">
+                      </div>
+                      <div class="">
+                        <p>Message to Vendor</p>
+                        <textarea class="inputs" name="name" rows="6" cols="40">Message</textarea>
+                      </div>
+                      <div class="">
+                        <p>Email Comments (Internal)</p>
+                        <textarea class="inputs" name="name" rows="6" cols="40">Comments</textarea>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
-            </form>
+          </div>
+
           </div>
         </div>
 
-        <div role="tabpanel" class="tab-pane new-orders" id="settings">
-          <div class="row">
-            <form class="" action="index.html" method="post">
-              <div class="col-md-4">
-                <p>Edit Work Order: {WO #}</p>
-                <div class="input-group">
-                  <span class="input-group-addon" id="sizing-addon1">WO</span>
-                  <input type="text" name="name" value="">
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="sizing-addon1">WO</span>
-                  <input type="text" name="name" value="">
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="sizing-addon1">WO</span>
-                  <input type="text" name="name" value="">
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="sizing-addon1">WO</span>
-                  <input type="text" name="name" value="">
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="sizing-addon1">WO</span>
-                  <input type="text" name="name" value="">
-                </div>
-                <div class="">
-                  <select class="filters" name="Inspection">
-                    <option>Inspection</option>
-                    <option>option2</option>
-                  </select>
-                </div>
-                <div class="drag-drop" style="border: 1px solid black">
-                  <p>Drag and Drop Area</p>
-                </div>
-              </div>
 
-              <div class="col-md-4">
-
-                <div class="">
-                  <p>Client: {Client Name}</p>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="">
-                  </div>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="">
-                  </div>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="">
-                  </div>
-                </div>
-                <div class="">
-                  <p>Other Remarks</p>
-                  <textarea name="name" rows="8" cols="40"></textarea>
-                </div>
-                <div class="">
-                  <button type="button" name="button"> Save Progress</button>
-                  <button type="button" name="button">Save and Email Vendor</button>
-                </div>
-
-              </div>
-              <div class="col-md-4">
-                <div class="">
-                  <p>Vendor: {Vendor Name}</p>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="">
-                  </div>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="">
-                  </div>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">WO</span>
-                    <input type="text" name="name" value="">
-                  </div>
-                </div>
-                <div class="">
-                  <p>File / Upload +</p>
-                  <i class="glyphicons glyphicons-plus" aria-hidden="true"></i>
-                  <div class="">
-                    <input type="file" name="name" value="">
-                  </div>
-                  <div class="">
-                    CC:
-                    <input type="text" name="name" value="">
-                  </div>
-                  <div class="">
-                    <p>Message to Vendor</p>
-                    <textarea name="name" rows="4" cols="20"></textarea>
-                  </div>
-                  <div class="">
-                    <p>Email Comments (Internal)</p>
-                    <textarea name="name" rows="4" cols="20"></textarea>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-
-      </div>
 
 
     </section>
@@ -967,82 +937,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
   </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="pull-right-container">
-                  <span class="label label-danger pull-right">70%</span>
-                </span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <!--  <div class="control-sidebar-bg"></div>-->
 </div>
 <!-- ./wrapper -->
 
