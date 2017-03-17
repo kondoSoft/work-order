@@ -17,7 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="css/AdminLTE.css">
   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css" media="screen" title="no title" charset="utf-8">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
@@ -37,7 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <![endif]-->
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue">
 <div class="wrapper" style="height: none;">
 
   <!-- Main Header -->
@@ -51,20 +51,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
 
+
+
+
+
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
-
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
       <!-- Navbar Right Menu -->
-
-
-
-
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-
+          <li>
+            <a href="">Go to Work Orders</a>
+          </li>
           <li class="dropdown user user-menu">
 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -84,7 +82,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </li>
 
-              </li>
+            </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
@@ -96,38 +94,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
-          <!-- Control Sidebar Toggle Button-->
-
         </ul>
       </div>
     </nav>
   </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-
-
-      <ul class="sidebar-menu">
-        <li class="header">OWNER MENU</li>
-
-        <li><a href="#"><i class="fa fa-pencil"></i> <span>Edit Employees</span></a></li>
-        <li><a href="#"><i class="fa fa-pencil"></i> <span>Edit Job Descriptions</span></a></li>
-        <li><a href="#"><i class="fa fa-pencil"></i> <span>Edit Email Templates</span></a></li>
-        <li><a href="#"><i class="fa fa-pencil"></i> <span>Edit States and Field</span></a></li>
-        <li><a href="#"><i class="fa fa-pencil"></i> <span>Update QB</span></a></li>
-
-      </ul>
-
-    </section>
-
-  </aside>
-
-
-
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <section class="row contain-top">
@@ -198,15 +168,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </form>
     </section>
     <!-- Content Header (Page header) -->
+    <!--  Menu tab panes for the main page of vendor -->
     <section class="content-header">
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Work Orders</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Info</a></li>
-        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Edit/Upload</a></li>
-        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">New Entry</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Upload Files(s) and Picture(s)</a></li>
       </ul>
-
-
     </section>
 
     <!-- Main content -->
@@ -633,295 +600,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <div role="tabpanel" class="tab-pane info" id="profile">
           <section class="row">
-            <div class="col-md-3 col-lg-6">
-              <div class="row info-col1">
-                <div class="col-lg-6">
-                  <article class="wo">
-                    <p class="title-p">Work Order: (WO #)</p>
-                    <ul>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                    </ul>
-                  </article>
-
-                  <article class="status">
-                    <p class="title-p">Status</p>
-                    <select class="filters" name="Complete">
-                      <option>Complete</option>
-                      <option>option 2</option>
-                    </select>
-                    <div class="status-btn">
-                      <button type="button" name="button">Send Reminder Lvl 1</button>
-                      <button type="button" name="button">Send Reminder Lvl 2</button>
-                    </div>
-                  </article>
-                  <article class="vendor">
-                    <p class="title-p">Vendor: {Vendor Name}</p>
-                    <ul>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                    </ul>
-                  </article>
-                </div>
-                <div class="col-lg-6">
-                  <article class="client">
-                    <p class="title-p">Client: {Client Name}</p>
-                    <ul>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                    </ul>
-                  </article>
-                  <article class="other">
-                    <p class="title-p">Other Remarks</p>
-                    <ul>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                      <li>mas info</li>
-                    </ul>
-                  </article>
-                </div>
-              </div>
+            <div class="col-lg-3">
+              <article class="wo">
+                <p class="title-p">Work Order: {WO#}</p>
+                <ul>
+                  <li>mas info</li>
+                  <li>mas info</li>
+                  <li>mas info</li>
+                  <li>mas info</li>
+                  <li>mas info</li>
+                  <li>mas info</li>
+                </ul>
+              </article>
+              <article class="status">
+                <p>Status: In Progress</p>
+                
+              </article>
             </div>
-
-            <div class="col-md-7 col-lg-6">
-              <div class="">
-                <p class="title-p">Property Photos</p>
-                <div class="property-gallery-btn">
-                  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Load More"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-                  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Download All"><i class="fa fa-download" aria-hidden="true"></i></button>
-                  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Download Selected"><i class="fa fa-download" aria-hidden="true"></i></button>
-                </div>
-                  <div class="property-gallery">
-                    <img src="http://placehold.it/100x100">
-                    <img src="http://placehold.it/100x100">
-                    <img src="http://placehold.it/100x100">
-                    <img src="http://placehold.it/100x100">
-                    <img src="http://placehold.it/100x100">
-                    <img src="http://placehold.it/100x100">
-                    <img src="http://placehold.it/100x100">
-                    <img src="http://placehold.it/100x100">
-                    <img src="http://placehold.it/100x100">
-                    <img src="http://placehold.it/100x100">
-                  </div>
-              </div>
-              <div>
-                <p class="title-p">Property Documents</p>
-                <div class="property-gallery-btn">
-                  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Load More"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-                  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Download All"><i class="fa fa-download" aria-hidden="true"></i></button>
-                  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Download Selected"><i class="fa fa-download" aria-hidden="true"></i></button>
-                </div>
-                <div class="property-documents">
-                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
-                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
-                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
-                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
-                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
-                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
-                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
-                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
-                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
-                  <a href="" class="btn btn-app"><i class="fa fa-file-text" aria-hidden="true"></i></a>
-                </div>
-              </div>
+            <div class="col-lg-9">
+              sfghsdgfsd
             </div>
           </section>
         </div>
-
-        <div role="tabpanel" class="tab-pane edit-orders" id="messages">
-          <div class="row">
-            <form class="" action="index.html" method="post">
-              <div class="col-md-4 edit-form">
-                <p class="title-p">Edit Work Order: {WO #}</p>
-
-                  <input class="inputs"type="text" name="name" placeholder="Data">
-
-                  <input class="inputs"type="text" name="name" placeholder="Data">
-
-
-                  <input class="inputs"type="text" name="name" placeholder="Data">
-
-
-                  <input class="inputs"type="text" name="name" placeholder="Data">
-
-
-                  <input class="inputs"type="text" name="name" placeholder="Data">
-
-                  <div class="select">
-                    <select class="filters" name="Inspection">
-                      <option>Inspection</option>
-                      <option>option2</option>
-                    </select>
-                  </div>
-                  <div class="drag-drop">
-                    <p>Drag and Drop Area</p>
-                  </div>
-                </div>
-
-              <div class="col-md-4">
-
-                <div class="edit-form">
-                  <p class="title-p">Client: {Client Name}</p>
-
-                    <input class="inputs" type="text" name="name" placeholder="Data">
-
-
-                    <input class="inputs" type="text" name="name" placeholder="Data">
-
-
-                    <input class="inputs" type="text" name="name" placeholder="Data">
-
-                </div>
-                <div class="edit-form">
-                  <p class="title-p">Other Remarks</p>
-                  <textarea class="inputs" name="name" rows="8" cols="40">More data</textarea>
-                </div>
-                <div class="btn-space">
-                  <button class="btn-update" type="button" name="button">Update WO info</button>
-                  <button class="btn-save"type="button" name="button">Save and Email Vendor</button>
-                </div>
-
-              </div>
-              <div class="col-md-4">
-                <div class="edit-form">
-                  <p class="title-p">Vendor: {Vendor Name}</p>
-                    <input class="inputs" type="text" name="name" placeholder="Data">
-                    <input class="inputs" type="text" name="name" placeholder="Data">
-                    <input class="inputs" type="text" name="name" placeholder="Data">
-
-                  </div>
-                  <div>
-                    <p class="title-p">File / Upload +</p>
-                    <i class="glyphicons glyphicons-plus" aria-hidden="true"></i>
-                    <div class="input-file">
-                      <input type="file" name="name" placeholder="Data">
-                    </div>
-                    <div class="">
-                      CC:
-                      <input class="inputs" type="text" name="name" placeholder="Data">
-                    </div>
-                    <div class="">
-                      <p>Message to Vendor</p>
-                      <textarea class="inputs" name="name" rows="6" cols="40">Message</textarea>
-                    </div>
-                    <div class="">
-                      <p>Email Comments (Internal)</p>
-                      <textarea class="inputs" name="name" rows="6" cols="40">Comments</textarea>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-
-          <div role="tabpanel" class="tab-pane new-orders" id="settings">
-            <div class="row">
-              <form class="" action="index.html" method="post">
-                <div class="col-md-4 edit-form">
-                  <p class="title-p"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Work Order: {WO #}</p>
-
-                    <input class="inputs"type="text" name="name" placeholder="Data">
-
-                    <input class="inputs"type="text" name="name" placeholder="Data">
-
-
-                    <input class="inputs"type="text" name="name" placeholder="Data">
-
-
-                    <input class="inputs"type="text" name="name" placeholder="Data">
-
-
-                    <input class="inputs"type="text" name="name" placeholder="Data">
-
-                    <div class="select">
-                      <select class="filters" name="Inspection">
-                        <option>Inspection</option>
-                        <option>option2</option>
-                      </select>
-                    </div>
-                    <div class="drag-drop">
-                      <p>Drag and Drop Area</p>
-                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    </div>
-                  </div>
-
-                <div class="col-md-4">
-
-                  <div class="edit-form">
-                    <p class="title-p"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Client: {Client Name}</p>
-
-                      <input class="inputs" type="text" name="name" placeholder="Data">
-
-
-                      <input class="inputs" type="text" name="name" placeholder="Data">
-
-
-                      <input class="inputs" type="text" name="name" placeholder="Data">
-
-                  </div>
-                  <div class="edit-form">
-                    <p class="title-p"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Other Remarks</p>
-                    <textarea class="inputs" name="name" rows="8" cols="40">More data</textarea>
-                  </div>
-                  <div class="btn-space">
-                    <button class="btn-update" type="button" name="button">Update WO info</button>
-                    <button class="btn-save"type="button" name="button">Save and Email Vendor</button>
-                  </div>
-
-                </div>
-                <div class="col-md-4">
-                  <div class="edit-form">
-                    <p class="title-p"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Vendor: {Vendor Name}</p>
-                      <input class="inputs" type="text" name="name" placeholder="Data">
-                      <input class="inputs" type="text" name="name" placeholder="Data">
-                      <input class="inputs" type="text" name="name" placeholder="Data">
-
-                    </div>
-                    <div>
-                      <p class="title-p"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> File / Upload +</p>
-                      <i class="glyphicons glyphicons-plus" aria-hidden="true"></i>
-                      <div class="input-file">
-                        <input type="file" name="name" placeholder="Data">
-                      </div>
-                      <div class="">
-                        CC:
-                        <input class="inputs" type="text" name="name" placeholder="Data">
-                      </div>
-                      <div class="">
-                        <p>Message to Vendor</p>
-                        <textarea class="inputs" name="name" rows="6" cols="40">Message</textarea>
-                      </div>
-                      <div class="">
-                        <p>Email Comments (Internal)</p>
-                        <textarea class="inputs" name="name" rows="6" cols="40">Comments</textarea>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-          </div>
-
-          </div>
-        </div>
-
-
-
-
-    </section>
-    <!-- /.content -->
+      </div>
   </div>
+</div>
 
 
 
