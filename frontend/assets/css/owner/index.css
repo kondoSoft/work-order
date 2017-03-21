@@ -1,0 +1,139 @@
+* {
+  font-family: "Roboto", sans-serif; }
+
+ul {
+  padding: 0px 0px 0px 10px; }
+  ul li {
+    list-style: none; }
+
+.filters-containers .select2-container {
+  margin: 0px 2px;
+  width: 90px !important; }
+
+.filters-containers {
+  display: none; }
+
+.btn {
+  margin: 8px !important; }
+
+.list-group {
+  margin: 8px 0px !important; }
+
+.span-group {
+  margin: 10px; }
+
+.span-title {
+  margin-right: 90px; }
+
+.title-p {
+  font-size: 19px;
+  margin: 10px; }
+
+.status {
+  padding: 10px; }
+  .status p {
+    display: inline; }
+  .status .status-btn button {
+    margin: 10px 15px 7px 0px; }
+
+.property-gallery-btn p {
+  display: inline-block;
+  margin-right: 300px; }
+
+.property-gallery {
+  width: 500px;
+  height: 260px;
+  border: 1px solid lightgray;
+  overflow: auto;
+  background-color: #fff; }
+  .property-gallery img {
+    margin: 9px; }
+
+.property-documents {
+  width: 500px;
+  height: 220px;
+  border: 1px solid lightgray;
+  overflow: auto;
+  background-color: #fff; }
+
+.inputs {
+  margin-bottom: 10px;
+  border: none;
+  padding: 4px; }
+
+.edit-form .inputs {
+  width: 300px; }
+.edit-form .select {
+  margin-top: 10px;
+  margin-bottom: 20px; }
+.edit-form .drag-drop {
+  width: 160px;
+  height: 160px;
+  border: none;
+  background-color: white;
+  color: gray;
+  text-align: center;
+  padding-top: 20px; }
+  .edit-form .drag-drop p {
+    margin-bottom: 20px; }
+  .edit-form .drag-drop span {
+    font-size: 30px; }
+
+.input-file {
+  margin-bottom: 20px; }
+
+.btn-update {
+  margin-right: 23px;
+  border: none;
+  padding: 8px;
+  background-color: #2E9AFE;
+  color: black;
+  border-radius: 10px; }
+
+.btn-update:focus {
+  outline: none; }
+
+.btn-update:hover {
+  background-color: #81BEF7; }
+
+.btn-save {
+  border: none;
+  padding: 8px;
+  background-color: #FFBF00;
+  border-radius: 10px;
+  color: black; }
+
+.btn-save:focus {
+  outline: none; }
+
+.btn-save:hover {
+  background-color: #F7D358; }
+
+.btn-center {
+  text-align: center; }
+
+.drag-drop-photos {
+  border: 1px solid lightgray;
+  background-color: #fff;
+  height: 300px;
+  text-align: center; }
+  .drag-drop-photos select {
+    margin-left: 267px;
+    border: none;
+    padding: 5px; }
+  .drag-drop-photos p {
+    margin-top: 90px; }
+  .drag-drop-photos span {
+    font-size: 40px; }
+
+.drag-drop-documents {
+  border: 1px solid lightgray;
+  background-color: #fff;
+  height: 300px;
+  text-align: center; }
+  .drag-drop-documents p {
+    margin-top: 118px; }
+  .drag-drop-documents span {
+    font-size: 40px; }
+
+/*# sourceMappingURL=index.css.map */
