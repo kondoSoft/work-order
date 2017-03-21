@@ -1,7 +1,17 @@
 #encoding:utf-8
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
+from django.template.defaultfilters import slugify
+import os
+
+
+def get_upload_path(instance, filename):
+    carpetaImagenes = slugify(str(
+        instance.creation_date))
+    ruta = os.path.join("media/" + carpetaImagenes)
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % (slugify(instance.creation_date), ext)
+    return os.path.join(ruta, filename)
 
 class Status(models.Model):
     code = models.CharField(max_length=10)
@@ -30,7 +40,7 @@ class Person(models.Model):
     address = models.CharField(max_length=200)
     type = models.IntegerField(choices=TYPES)
     status = models.ForeignKey(Status)
-    creation_date = models.DateTimeField(auto_now_add=True)
+    creation_date = models.DateField(auto_now_add=True)
     user = models.ForeignKey(User)
 
     class Meta:
@@ -44,7 +54,7 @@ class Person(models.Model):
 class Remark(models.Model):
     description = models.TextField()
     status = models.ForeignKey(Status)
-    creation_date = models.DateTimeField(auto_now_add=True)
+    creation_date = models.DateField(auto_now_add=True)
     user = models.ForeignKey(User)
 
     class Meta:
@@ -53,6 +63,81 @@ class Remark(models.Model):
 
     def __str__(self):
         return '%s' % (self.description)
+
+
+class RemarkStatusOrder(models.Model):
+    order = models.ForeignKey('Order')
+    status = models.ForeignKey(Status)
+    remark = models.ForeignKey(Remark)
+    creation_date = models.DateField(auto_now_add=True)
+    user = models.ForeignKey(User)
+
+    class Meta:
+        verbose_name = 'Remark Status Order'
+        verbose_name_plural = 'Remark Status Order'
+
+    def __str__(self):
+        return '%s - %s -%s' % (str(self.order.number), self.status.description, self.remark.description)
+
+
+class Photo(models.Model):
+
+
+    photo = models.ImageField(upload_to=get_upload_path)
+    status = models.ForeignKey(Status)
+    creation_date = models.DateField(auto_now_add=True)
+    user = models.ForeignKey(User)
+
+    class Meta:
+        verbose_name = 'Photo'
+        verbose_name_plural = 'Photos'
+
+    def  __str__(self):
+        return str(self.creation_date)
+
+
+class OrderStatusPhoto(models.Model):
+    order = models.ForeignKey('Order')
+    photo = models.ForeignKey(Photo)
+    status = models.ForeignKey(Status)
+    creation_date = models.DateField(auto_now_add=True)
+    user = models.ForeignKey(User)
+
+    class Meta:
+        verbose_name = 'Order Status Photo'
+        verbose_name_plural = 'Orders Status Photos'
+
+    def __str__(self):
+        return '%s - %s' % (str(self.order.number), str(self.photo.id))
+
+
+class Document(models.Model):
+    document = models.FileField(upload_to=get_upload_path)
+    status = models.ForeignKey(Status)
+    creation_date = models.DateField(auto_now_add=True)
+    user = models.ForeignKey(User)
+
+    class Meta:
+        verbose_name = 'Document'
+        verbose_name_plural = 'Documents'
+
+    def  __str__(self):
+        return str(self.creation_date)
+
+
+class OrderStatusDocument(models.Model):
+    order = models.ForeignKey('Order')
+    document = models.ForeignKey(Document)
+    status = models.ForeignKey(Status)
+    creation_date = models.DateField(auto_now_add=True)
+    user = models.ForeignKey(User)
+
+    class Meta:
+        verbose_name = 'Order Status Document'
+        verbose_name_plural = 'Orders Status Documents'
+
+    def __str__(self):
+        return '%s - %s' % (str(self.order.number), str(self.document.id))
 
 
 class Order(models.Model):
@@ -68,7 +153,8 @@ class Order(models.Model):
     client = models.ForeignKey(Person,related_name='client')
     client_contract = models.CharField(max_length=20)
     status = models.ForeignKey(Status)
-    creation_date = models.DateTimeField(auto_now_add=True)
+    remark = models.ManyToManyField(Remark, through=RemarkStatusOrder, blank=True, null=True)
+    creation_date = models.DateField(auto_now_add=True)
     user = models.ForeignKey(User)
 
     class Meta:
