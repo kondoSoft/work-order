@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('Apps.Login.urls')),
     url(r'^administration/', include('Apps.WorkOrdersApp.urls')),
+    url(r'^api/', include('Apps.Api.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

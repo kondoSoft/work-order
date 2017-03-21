@@ -1,24 +1,98 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+    {{ block.super }} | Orders List
+{% endblock %}
+{% block title_conten %}
+    Work Orders
+{% endblock %}
+{% block breadcrumb %}
+    {{ block.super }}
+    <li class="active">Orders List</li>
+{% endblock %}
 {% block contenedor %}
-<section class="content-header">
-      <h1>
-        Work Orders
-      </h1>
-    </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
+<div class="row">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">List</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Coordinator</th>
+              <th>Wo Status</th>
+              <th>Wo</th>
+              <th>Estate</th>
+              <th>Adres</th>
+              <th>Client</th>
+              <th>Client Contract</th>
+              <th>Vendor</th>
+              <th>Vendor Sub-out</th>
+              <th>Sub-out%</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for p in orders %}
+                <tr>
+                  <td>{{ p.start_date }}</td>
+                  <td>{{ p.end_date }}
+                  </td>
+                  <td>{{ p.coordinator }}</td>
+                  <td>{{ p.status }}</td>
+                  <td>{{ p.number }}</td>
+                  <td>{{ p.state }}</td>
+                  <td>{{ p.address }}</td>
+                  <td>{{ p.client }}</td>
+                  <td>{{ p.client_contract }}</td>
+                  <td>{{ p.vendor }}</td>
+                  <td>{{ p.vendor_sub_out }}</td>
+                  <td>{{ p.sub_out }}</td>
+                  <td>
+                      <a href="{% url 'detail-order' p.id %}"><i class="fa fa-fw fa-eye"></i></a>
+                      <a href="{% url 'edit-order' p.id %}"><i class="fa fa-fw fa-edit"></i></a>
+                  </td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Coordinator</th>
+              <th>Wo Status</th>
+              <th>Wo</th>
+              <th>Estate</th>
+              <th>Adres</th>
+              <th>Client</th>
+              <th>Client Contract</th>
+              <th>Vendor</th>
+              <th>Vendor Sub-out</th>
+              <th>Sub-out%</th>
+              <th></th>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+        <div class="box">
             <div class="box-header">
-              <h3 class="box-title"></h3>
+              <h3 class="box-title">List</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-striped">
+              <table id="work-orders" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                  <th></th>
                   <th>Start Date</th>
                   <th>End Date</th>
                   <th>Coordinator</th>
@@ -34,30 +108,6 @@
                   <th></th>
                 </tr>
                 </thead>
-                <tbody>
-                {% for p in orders %}
-                    <tr>
-                      <td>{{ p.start_date }}</td>
-                      <td>{{ p.end_date }}
-                      </td>
-                      <td>{{ p.coordinator }}</td>
-                      <td>{{ p.status }}</td>
-                      <td>{{ p.number }}</td>
-                      <td>{{ p.state }}</td>
-                      <td>{{ p.address }}</td>
-                      <td>{{ p.client }}</td>
-                      <td>{{ p.client_contract }}</td>
-                      <td>{{ p.vendor }}</td>
-                      <td>{{ p.vendor_sub_out }}</td>
-                      <td>{{ p.sub_out }}</td>
-                      <td>
-                          <a href="{% url 'detail-order' p.id %}"><i class="fa fa-fw fa-eye"></i></a>
-                          <a href="{% url 'edit-order' p.id %}"><i class="fa fa-fw fa-edit"></i></a>
-                      </td>
-                    </tr>
-                {% endfor %}
-
-                </tbody>
                 <tfoot>
                 <tr>
                   <th>Start Date</th>
@@ -79,33 +129,16 @@
             </div>
             <!-- /.box-body -->
           </div>
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
+          <!-- /.box -->
+    </div>
+    <!-- /.col -->
+</div>
+<!-- /.row -->
 {% endblock contenedor %}
 {% block extrajs %}
     <script>
-    $("div#example").dropzone({ url: "{% url "dropzone" %}" });
     $(function () {
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
-        $('#example1').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
+        dataTableElement('work-orders','{% url 'api-work-orders-list' %}');
 
     });
     </script>
