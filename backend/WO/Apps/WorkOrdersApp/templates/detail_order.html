@@ -1,4 +1,15 @@
 {% extends 'base.html' %}
+{% block title %}
+    {{ block.super }} | Detail Order
+{% endblock %}
+{% block title_conten %}
+    Detail Order
+{% endblock %}
+{% block breadcrumb %}
+    {{ block.super }}
+    <li><a href="{% url 'work-orders-list' %}"> Orders List</a></li>
+    <li class="active">Detail Order</li>
+{% endblock %}
 {% block contenedor %}
 <div class="row">
     <!--/.col (right) -->

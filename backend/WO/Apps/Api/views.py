@@ -1,8 +1,9 @@
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
 from  Apps.WorkOrdersApp.models import Order
+from Apps.WorkOrdersApp.utils import NeverCacheMixin
 
-class ApiWorkOrderList(BaseDatatableView):
+class ApiWorkOrderList(NeverCacheMixin, BaseDatatableView):
     # The model we're going to show
     model = Order
 

@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'Apps.Login',
     'Apps.Api',
     'reversion',
-    'django.contrib.gis',
+    #'django.contrib.gis',
 ]
 
 MIDDLEWARE = [

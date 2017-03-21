@@ -1,21 +1,30 @@
 {% extends 'base.html' %}
-{% block title_content %}
-    <h1>
-        Create Order
-    </h1>
+{% block title %}
+    {{ block.super }} | New Orders
+{% endblock %}
+{% block title_conten %}
+    {% if order %}
+        Edit Order
+    {% else %}
+        New Order
+    {% endif %}
 {% endblock %}
 {% block breadcrumb %}
     {{ block.super}}
+    {% if order %}
+        <li class="active">Edit Order</li>
+    {% else %}
+        <li class="active">New Order</li>
+    {% endif %}
 {% endblock breadcrumb %}
 {% block contenedor %}
 <div class="row">
     <!-- right column -->
-    <div class="col-md-">
+    <div class="col-md-12">
       <!-- Horizontal Form -->
       <div class="box box-info">
         <div class="box-header with-border">
-{#          <h3 class="box-title">Nuevo agente de ventas</h3>#}
-            Los campos necesarios están marcados <b style="color: red;">*</b>
+            Required fields are marked <b style="color: red;">*</b>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
@@ -24,7 +33,7 @@
           {% include "form_snippet.html" %}
           <!-- /.box-body -->
           <div class="box-footer">
-    
+
             {% if order %}
                 <a href="{% url 'work-orders-list' %}" class="btn btn-warning">Cancelar</a>
             {% endif %}

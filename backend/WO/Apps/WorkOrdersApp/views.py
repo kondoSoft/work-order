@@ -5,6 +5,7 @@ from django.db import transaction
 from django.contrib import messages
 from .models import  Order
 from .forms import NewOrderForm
+from .utils import NeverCacheMixin
 
 class DropZoneExample(TemplateView):
     "Example of dropzone usage"
@@ -16,7 +17,7 @@ class DropZoneExample(TemplateView):
         return super(TemplateView, self).render_to_response(context)
 
 
-class WorkOrdersListView(TemplateView):
+class WorkOrdersListView(NeverCacheMixin, TemplateView):
     "Example of dropzone usage"
     template_name = 'work_orders_list.html'
 
@@ -33,7 +34,7 @@ class WorkOrdersListView(TemplateView):
         return context
 
 
-class NewOrderView( CreateView):
+class NewOrderView( NeverCacheMixin, CreateView):
     model = Order
     form_class = NewOrderForm
     template_name = 'new_orders_form.html'
@@ -58,7 +59,7 @@ class NewOrderView( CreateView):
         return context
 
 
-class DetailOrderView(DetailView):
+class DetailOrderView(NeverCacheMixin, DetailView):
     model = Order
     template_name = 'detail_order.html'
 
@@ -70,7 +71,7 @@ class DetailOrderView(DetailView):
         return context
 
 
-class EditOrderView( UpdateView):
+class EditOrderView( NeverCacheMixin, UpdateView):
     model = Order
     form_class = NewOrderForm
     template_name = 'new_orders_form.html'
