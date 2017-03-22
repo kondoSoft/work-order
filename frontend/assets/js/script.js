@@ -1,6 +1,6 @@
 $(document).ready(function (){
   $("#check").iCheck({
-    checkboxClass:"icheckbox_minimal"
+    checkboxClass:"icheckbox_square-green"
   })
   $('#work-orders').DataTable( {
        columnDefs: [ {

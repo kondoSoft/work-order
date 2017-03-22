@@ -20,7 +20,7 @@
         apply the skin class to the body tag so the changes take effect.
   -->
   <link rel="stylesheet" href="../../dist/css/skins/skin-blue.min.css">
-  <link rel="stylesheet" href="../../plugins/iCheck/minimal/_all.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="../../plugins/iCheck/square/green.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="../../plugins/datatables/jquery.dataTables.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="../../plugins/select2/select2.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="../../assets/css/owner/index.css">
@@ -105,10 +105,16 @@
           <span class="span-title">Total Listing Entries: (#)</span>
           <span class="span-title">In Progress: (#)</span>
           <span class="span-title">WO Overdue: (#)</span>
+          <div class="checkbox icheck" id="check">
+            <label>
+               Vendor Upload Status
+            </label>
+            <input class="quickbook-status" type="checkbox">
+          </div>
         </div>
         <div class="">
-          <button class="btn btn-default" type="button" name="button">Export Current Page</button>
-          <button class="btn btn-default filter-toggle" type="button" name="button">Open Filter</button>
+          <button class="btn btn-primary" type="button" name="button">Export Current Page</button>
+          <button class="btn btn-info filter-toggle" type="button" name="button">Open Filter</button>
         </div>
       </div>
     </section>
@@ -153,7 +159,7 @@
                 <option>Vendor</option>
                 <option>option 2</option>
               </select>
-              <input type="submit" name="Filter" value="Filter Results">
+              <input class="btn btn-success" type="submit" name="Filter" value="Filter Results">
         </div>
 
 
@@ -619,8 +625,8 @@
                       <option>option 2</option>
                     </select>
                     <div class="status-btn">
-                      <button type="button" name="button">Send Reminder Lvl 1</button>
-                      <button type="button" name="button">Send Reminder Lvl 2</button>
+                      <button class="btn btn-default" type="button" name="button">Send Reminder Lvl 1</button>
+                      <button class="btn btn-default" type="button" name="button">Send Reminder Lvl 2</button>
                     </div>
                   </article>
                   <article class="vendor">
@@ -706,6 +712,12 @@
 
         <div role="tabpanel" class="tab-pane edit-orders" id="messages">
           <div class="row">
+            <div class="checkbox icheck" id="check">
+              <label>
+                 Vendor Upload Status
+              </label>
+              <input type="checkbox">
+            </div>
             <form class="" action="index.html" method="post">
               <div class="col-md-4 edit-form">
                 <p class="title-p"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Work Order: {WO #}</p>
@@ -785,14 +797,19 @@
                 </div>
               </form>
               <div class="btn-space col-lg-12 btn-center">
-                <button class="btn-update" type="button" name="button">Update WO info</button>
-                <button class="btn-save"type="button" name="button">Save and Email Vendor</button>
+                <button class="btn btn-primary" type="button" name="button">Update WO info</button>
+                <button class="btn btn-warning"type="button" name="button">Save and Email Vendor</button>
               </div>
             </div>
           </div>
 
           <div role="tabpanel" class="tab-pane new-orders" id="settings">
             <div class="row">
+              <div class="checkbox icheck" id="check">
+                <label>
+                  <input type="checkbox"> Vendor Upload Status
+                </label>
+              </div>
               <form class="" action="index.html" method="post">
                 <div class="col-md-4 edit-form">
                   <p class="title-p"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Work Order: {WO #}</p>
@@ -873,8 +890,8 @@
                   </div>
                 </form>
                 <div class="btn-space col-lg-12 btn-center">
-                  <button class="btn-update" type="button" name="button">Update WO info</button>
-                  <button class="btn-save"type="button" name="button">Save and Email Vendor</button>
+                  <button class="btn btn-primary" type="button" name="button">Update WO info</button>
+                  <button class="btn btn-warning"type="button" name="button">Save and Email Vendor</button>
                 </div>
               </div>
           </div>
