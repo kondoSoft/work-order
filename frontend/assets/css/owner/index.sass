@@ -5,19 +5,23 @@ ul
   li
     list-style: none
 .filters-containers
+  display: none
   .select2-container
     margin: 0px 2px
     width: 90px !important
-.filters-containers
-  display: none
 .btn
   margin: 8px !important
 .list-group
   margin: 8px 0px !important
 .span-group
   margin: 10px
+.checkbox
+  display: inline-block
+  margin-left: 50px
+  .quickbook-status
+    margin-right: 10px
 .span-title
-  margin-right: 90px
+  margin-right: 50px
 // .info-col1
 //   margin-left: 10px
 //   background-color: #088A85
@@ -51,7 +55,7 @@ ul
   border: 1px solid lightgray
   overflow: auto
   background-color: #fff
-.wo,.status,.vendor,.client,.other
+//.wo,.status,.vendor,.client,.other
 //Inputs style
 .inputs
   margin-bottom: 10px
@@ -82,38 +86,15 @@ ul
 //input file
 .input-file
   margin-bottom: 20px
-.btn-update
-  margin-right: 23px
-  border: none
-  padding: 8px
-  background-color: #2E9AFE
-  color: black
-  border-radius: 10px
-.btn-update:focus
-  outline: none
-.btn-update:hover
-  background-color: #81BEF7
-//button save style
-.btn-save
-  border: none
-  padding: 8px
-  background-color: #FFBF00
-  border-radius: 10px
-  color: black
-.btn-save:focus
-  outline: none
-.btn-save:hover
-  background-color: #F7D358
-.btn-center
-  text-align: center
 //vendor drag & drop section style
 .drag-drop-photos
   border: 1px solid lightgray
   background-color: #fff
   height: 300px
   text-align: center
+  margin-bottom: 10px
   select
-    margin-left: 267px
+    width: 100%
     border: none
     padding: 5px
   p
@@ -125,7 +106,15 @@ ul
   background-color: #fff
   height: 300px
   text-align: center
+  margin-bottom: 10px
   p
     margin-top: 118px
   span
     font-size: 40px
+//main footer
+.main-footer
+  text-align: center
+//end main footer
+//center buttons save ^ update tab panels
+.btn-center
+  text-align: center
