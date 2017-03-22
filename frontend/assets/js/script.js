@@ -20,8 +20,7 @@ $(document).ready(function (){
    });
    $(".tooltip").tooltip();
    $(".filter-toggle").on("click", function(){
-     console.log("hola");
      $(".filters-containers").fadeToggle(400)
    })
-
+     $("#slimScrollDiv").slimScroll();
 })
