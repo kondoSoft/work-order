@@ -4,15 +4,6 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 import os
 
-
-def get_upload_path(instance, filename):
-    carpetaImagenes = slugify(str(
-        instance.creation_date))
-    ruta = os.path.join("media/" + carpetaImagenes)
-    ext = filename.split('.')[-1]
-    filename = "%s.%s" % (slugify(instance.creation_date), ext)
-    return os.path.join(ruta, filename)
-
 class Status(models.Model):
     code = models.CharField(max_length=10)
     description = models.CharField(max_length=20)
@@ -81,8 +72,13 @@ class RemarkStatusOrder(models.Model):
 
 
 class Photo(models.Model):
-
-
+    def get_upload_path(instance, filename):
+        carpetaImagenes = slugify(str(
+            instance.creation_date))
+        ruta = os.path.join('media/'+carpetaImagenes)
+        ext = filename.split('.')[-1]
+        filename = "%s.%s" % (slugify(instance.creation_date), ext)
+        return os.path.join(ruta, filename)
     photo = models.ImageField(upload_to=get_upload_path)
     status = models.ForeignKey(Status)
     creation_date = models.DateField(auto_now_add=True)
@@ -112,6 +108,14 @@ class OrderStatusPhoto(models.Model):
 
 
 class Document(models.Model):
+    def get_upload_path(instance, filename):
+        carpetaImagenes = slugify(str(
+            instance.creation_date))
+        ruta = os.path.join('media/',carpetaImagenes)
+        ext = filename.split('.')[-1]
+        filename = "%s.%s" % (slugify(instance.creation_date), ext)
+        return os.path.join(ruta, filename)
+
     document = models.FileField(upload_to=get_upload_path)
     status = models.ForeignKey(Status)
     creation_date = models.DateField(auto_now_add=True)
@@ -153,7 +157,7 @@ class Order(models.Model):
     client = models.ForeignKey(Person,related_name='client')
     client_contract = models.CharField(max_length=20)
     status = models.ForeignKey(Status)
-    remark = models.ManyToManyField(Remark, through=RemarkStatusOrder, blank=True, null=True)
+    remark = models.ManyToManyField(Remark, through=RemarkStatusOrder)
     creation_date = models.DateField(auto_now_add=True)
     user = models.ForeignKey(User)
 

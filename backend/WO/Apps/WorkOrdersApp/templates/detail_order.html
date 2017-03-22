@@ -32,26 +32,32 @@
       <!-- USERS LIST -->
       <div class="box box-danger">
         <div class="box-header with-border">
-          <h3 class="box-title">Property Photos(This section is under construction)</h3>
+          <h3 class="box-title">Property Photos</h3>
 
           <div class="box-tools pull-right">
-            <span class="label label-success">0 imagenes</span>
+              <span class="label label-success">{{ order.orderstatusphoto_set.all.count }} imagenes</span>
+              <select>
+                  <option value="">seleccione una opción</option>
+                  {% for status in status %}
+                    <option value="{{ status.id }}">{{ status.description }}</option>
+                  {% endfor %}
+              </select>
           </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body no-padding">
           <ul class="users-list clearfix">
-{#            {% for img in imagenes_espacio %}#}
-{#            <li>#}
-{#              <img src="{{ MEDIA_URL }}{{ img.imagen }}" alt="User Image">#}
-{#              <a class="users-list-name" href="#" data-toggle="modal" data-target="#myModalEliminarImagen" onclick="setImgEliminar('{{ MEDIA_URL }}{{ img.imagen }}','{{ img.id }}')">Eliminar</a>#}
-{#              <span class="users-list-date">{{ img.fecha_registro }}</span>#}
-{#            </li>#}
-{#            {% empty %}#}
+           {% for image in order.orderstatusphoto_set.all %}
+            <li>
+              <img src="{{ MEDIA_URL }}{{ image.photo.photo }}" alt="User Image">
+              <a class="users-list-name" href="#" data-toggle="modal" data-target="#myModalEliminarImagen" onclick="setImgEliminar('{{ MEDIA_URL }}{{ image.photo.photo }}','{{ img.id }}')">Eliminar</a>
+              <span class="users-list-date">{{ image.creation_date }}</span>
+            </li>
+            {% empty %}
                 <li>
                     No photos
                 </li>
-{#            {% endfor %}#}
+            {% endfor %}
           </ul>
           <!-- /.users-list -->
         </div>
@@ -146,25 +152,10 @@
 {% endblock contenedor %}
 {% block extrajs %}
     <script>
-    $("div#example").dropzone({ url: "{% url "dropzone" %}" });
-    $(function () {
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
-        $('#example1').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
-
-    });
+        function setImgEliminar(img, imagen_id) {
+            $("#imagen_id").val(imagen_id)
+            $("#imgEliminar").html("")
+            $("#imgEliminar").append("<img style='width: 570px;' src='"+img+"'>")
+        }
     </script>
 {% endblock %}
