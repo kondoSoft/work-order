@@ -6,12 +6,11 @@ ul {
   ul li {
     list-style: none; }
 
-.filters-containers .select2-container {
-  margin: 0px 2px;
-  width: 90px !important; }
-
 .filters-containers {
   display: none; }
+  .filters-containers .select2-container {
+    margin: 0px 2px;
+    width: 90px !important; }
 
 .btn {
   margin: 8px !important; }
@@ -22,8 +21,14 @@ ul {
 .span-group {
   margin: 10px; }
 
+.checkbox {
+  display: inline-block;
+  margin-left: 50px; }
+  .checkbox .quickbook-status {
+    margin-right: 10px; }
+
 .span-title {
-  margin-right: 90px; }
+  margin-right: 50px; }
 
 .title-p {
   font-size: 19px;
@@ -82,43 +87,14 @@ ul {
 .input-file {
   margin-bottom: 20px; }
 
-.btn-update {
-  margin-right: 23px;
-  border: none;
-  padding: 8px;
-  background-color: #2E9AFE;
-  color: black;
-  border-radius: 10px; }
-
-.btn-update:focus {
-  outline: none; }
-
-.btn-update:hover {
-  background-color: #81BEF7; }
-
-.btn-save {
-  border: none;
-  padding: 8px;
-  background-color: #FFBF00;
-  border-radius: 10px;
-  color: black; }
-
-.btn-save:focus {
-  outline: none; }
-
-.btn-save:hover {
-  background-color: #F7D358; }
-
-.btn-center {
-  text-align: center; }
-
 .drag-drop-photos {
   border: 1px solid lightgray;
   background-color: #fff;
   height: 300px;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 10px; }
   .drag-drop-photos select {
-    margin-left: 267px;
+    width: 100%;
     border: none;
     padding: 5px; }
   .drag-drop-photos p {
@@ -130,10 +106,17 @@ ul {
   border: 1px solid lightgray;
   background-color: #fff;
   height: 300px;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 10px; }
   .drag-drop-documents p {
     margin-top: 118px; }
   .drag-drop-documents span {
     font-size: 40px; }
+
+.main-footer {
+  text-align: center; }
+
+.btn-center {
+  text-align: center; }
 
 /*# sourceMappingURL=index.css.map */

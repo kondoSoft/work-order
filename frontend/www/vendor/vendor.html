@@ -186,15 +186,15 @@
           <span class="span-title">WO Overdue: (#)</span>
         </div>
         <div class="">
-          <button class="btn btn-default" type="button" name="button">Export Current Page</button>
-          <button class="btn btn-default filter-toggle" type="button" name="button">Open Filter</button>
+          <button class="btn btn-primary" type="button" name="button">Export Current Page</button>
+          <button class="btn btn-info filter-toggle" type="button" name="button">Open Filter</button>
         </div>
       </div>
     </section>
 
-    <section class="" style="height: 50px">
+    <section class="" style="height:auto;">
       <form class="row filters-containers" action="index.html" method="post">
-        <div class="form-group col-lg-3">
+        <div class="form-group col-lg-3 col-md-2 col-sm-12">
           <div class="input-group">
             <div class="input-group-addon">
               <i class="fa fa-calendar"></i>
@@ -203,7 +203,7 @@
           </div>
           <!-- /.input group -->
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-9 col-md-10 col-sm-12">
               <select class="filters" name="Coordin">
                 <option>Coordin</option>
                 <option>option 2</option>
@@ -232,7 +232,8 @@
                 <option>Vendor</option>
                 <option>option 2</option>
               </select>
-              <input type="submit" name="Filter" value="Filter Results">
+
+              <button class="btn btn-success" type="submit" name="Filter">Filter Results</button>
         </div>
 
 
@@ -673,7 +674,7 @@
 
         <div role="tabpanel" class="tab-pane upload" id="upload">
           <section class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-12">
               <article class="wo">
                 <p class="title-p">Work Order: {WO#}</p>
                 <ul>
@@ -697,7 +698,7 @@
               </article>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-6">
               <section class="drag-drop-photos">
                 <select class="" name="Property Photos">
                   <option value="">Inspection</option>
@@ -709,16 +710,16 @@
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
               </section>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-6">
               <section class="drag-drop-documents">
                 <p>Drag and Drop Documents Here</p>
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
               </section>
             </div>
 
-            <div class="btn-center col-lg-12">
-              <button class="btn-update" type="button" name="button">Save Progress</button>
-              <button class="btn-save" type="submit" name="button">Save and Submit WO</button>
+            <div class="btn-center col-xs-12">
+              <button class="btn btn-primary" type="button" name="button">Save Progress</button>
+              <button class="btn btn-warning" type="submit" name="button">Save and Submit WO</button>
             </div>
           </section>
         </div>
