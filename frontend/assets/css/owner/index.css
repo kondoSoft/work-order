@@ -18,14 +18,10 @@ ul {
 .list-group {
   margin: 8px 0px !important; }
 
-.span-group {
-  margin: 10px; }
-
 .checkbox {
-  display: inline-block;
-  margin-left: 50px; }
-  .checkbox .quickbook-status {
-    margin-right: 10px; }
+  display: inline-block; }
+  .checkbox label {
+    padding-left: 0px !important; }
 
 .span-title {
   margin-right: 50px; }
@@ -118,5 +114,11 @@ ul {
 
 .btn-center {
   text-align: center; }
+
+.span-group {
+  padding-top: 10px; }
+
+.select2 {
+  margin-bottom: 5px !important; }
 
 /*# sourceMappingURL=index.css.map */
