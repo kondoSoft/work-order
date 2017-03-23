@@ -73,9 +73,9 @@ class RemarkStatusOrder(models.Model):
 
 class Photo(models.Model):
     def get_upload_path(instance, filename):
-        carpetaImagenes = slugify(str(
+        carpetaImagenes = slugify('Images/')
+        ruta = os.path.join('media/'+carpetaImagenes, str(
             instance.creation_date))
-        ruta = os.path.join('media/'+carpetaImagenes)
         ext = filename.split('.')[-1]
         filename = "%s.%s" % (slugify(instance.creation_date), ext)
         return os.path.join(ruta, filename)
@@ -109,9 +109,9 @@ class OrderStatusPhoto(models.Model):
 
 class Document(models.Model):
     def get_upload_path(instance, filename):
-        carpetaImagenes = slugify(str(
+        carpetaImagenes = slugify('Files/')
+        ruta = os.path.join('media/'+carpetaImagenes, str(
             instance.creation_date))
-        ruta = os.path.join('media/',carpetaImagenes)
         ext = filename.split('.')[-1]
         filename = "%s.%s" % (slugify(instance.creation_date), ext)
         return os.path.join(ruta, filename)

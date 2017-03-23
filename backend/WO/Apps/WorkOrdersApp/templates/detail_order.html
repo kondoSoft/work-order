@@ -35,19 +35,20 @@
           <h3 class="box-title">Property Photos</h3>
 
           <div class="box-tools pull-right">
-              <span class="label label-success">{{ order.orderstatusphoto_set.all.count }} imagenes</span>
-              <select>
+              <span class="label label-success">{{ order_status_photo.count }} imagenes</span>
+              <select id="status_photo">
                   <option value="">seleccione una opción</option>
                   {% for status in status %}
                     <option value="{{ status.id }}">{{ status.description }}</option>
                   {% endfor %}
+                    <option value="">Todas</option>
               </select>
           </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body no-padding">
           <ul class="users-list clearfix">
-           {% for image in order.orderstatusphoto_set.all %}
+           {% for image in order_status_photo %}
             <li>
               <img src="{{ MEDIA_URL }}{{ image.photo.photo }}" alt="User Image">
               <a class="users-list-name" href="#" data-toggle="modal" data-target="#myModalEliminarImagen" onclick="setImgEliminar('{{ MEDIA_URL }}{{ image.photo.photo }}','{{ img.id }}')">Eliminar</a>
@@ -59,6 +60,38 @@
                 </li>
             {% endfor %}
           </ul>
+          <!-- /.users-list -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer text-center">
+          <a href="#" class="uppercase" data-toggle="modal" data-target="#myModalAgregarFoto"   title="Agregar una nueva imagen.."><i class="fa fa-fw fa-plus"></i></a>
+        </div>
+        <!-- /.box-footer -->
+      </div>
+      <!--/.box -->
+    </div>
+    <!-- /.col -->
+</div>
+<div class="row">
+    <div class="col-md-5">
+      <!-- USERS LIST -->
+      <div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Property Documents</h3>
+
+          <div class="box-tools pull-right">
+              <span class="label label-success">{{ order.orderstatusdocument_set.all.count }} Documents</span>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body no-padding"><br>
+        {% for p in order.orderstatusdocument_set.all %}
+          <a href="{{ MEDIA_URL }}{{ p.document.document }}" target="_blank" class="btn btn-app">
+            <i class="fa fa-file-archive-o"></i> {{ p.document.document.name  }}
+          </a>
+        {% empty %}
+            No Files
+        {% endfor %}
           <!-- /.users-list -->
         </div>
         <!-- /.box-body -->
@@ -152,10 +185,16 @@
 {% endblock contenedor %}
 {% block extrajs %}
     <script>
+        var status_photo = $("#status_photo");
+
         function setImgEliminar(img, imagen_id) {
             $("#imagen_id").val(imagen_id)
             $("#imgEliminar").html("")
             $("#imgEliminar").append("<img style='width: 570px;' src='"+img+"'>")
         }
+
+        status_photo.change(function () {
+          window.location.href="{% url 'detail-order' order.id %}?status_photo="+status_photo.val();
+        });
     </script>
 {% endblock %}
