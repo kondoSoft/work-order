@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, CreateView, DetailView, UpdateVie
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.db import transaction
 from django.contrib import messages
-from .models import  Order
+from .models import  Order, Status, OrderStatusPhoto
 from .forms import NewOrderForm
 from .utils import NeverCacheMixin
 
@@ -65,9 +65,17 @@ class DetailOrderView(NeverCacheMixin, DetailView):
 
 
     def get_context_data(self, **kwargs):
+        status_photo = self.request.GET.get('status_photo')
+        status = Status.objects.filter(code__in = [6,7,4,8])
+        order_status_photo = OrderStatusPhoto.objects.filter(order = self.object)
+        if status_photo:
+            order_status_photo = order_status_photo.filter(photo__status_id=status_photo)
+        print(order_status_photo)
         context = super(DetailOrderView, self).get_context_data(**kwargs)
         context["list_orders"] = "active"
         context['work_orders'] = 'active'
+        context['status'] = status
+        context['order_status_photo'] = order_status_photo
         return context
 
 
