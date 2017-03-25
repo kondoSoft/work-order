@@ -24,4 +24,4 @@ urlpatterns = [
     url(r'^', include('Apps.Login.urls')),
     url(r'^administration/', include('Apps.WorkOrdersApp.urls')),
     url(r'^api/', include('Apps.Api.urls')),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
