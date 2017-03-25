@@ -6,6 +6,9 @@ ul
     list-style: none
 .filters-containers
   display: none
+  margin-left: 5px
+.input-group
+  width: 95%
   .select2-container
     margin: 0px 2px
     width: 90px !important
@@ -37,19 +40,25 @@ ul
     display: inline-block
     margin-right: 300px
 .property-gallery
-  width: 500px
+  width: 90%
   height: 260px
   border: 1px solid lightgray
   overflow: auto
   background-color: #fff
+  @media screen and (min-width: 320px) and (max-width: 990px)
+    width: 91%
+    height: 240px
   img
     margin: 9px
 .property-documents
-  width: 500px
+  width: 90%
   height: 220px
   border: 1px solid lightgray
   overflow: auto
   background-color: #fff
+  @media screen and (min-width: 320px) and (max-width: 990px)
+    width: 91%
+    height: 160px
 //.wo,.status,.vendor,.client,.other
 //Inputs style
 .inputs
@@ -116,3 +125,5 @@ ul
   padding-top: 10px
 .select2
   margin-bottom: 5px !important
+textarea
+  width: 70%
